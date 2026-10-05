@@ -12,5 +12,7 @@ jobs:
   info_ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - name: ver versiones instaladas
+      - name: ver versiones node instalada
         run: node -v
+      - name:  ver version de git instalado
+        run: git -v 
