@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+    - main
+    - release/*
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Test Action Hola
+        uses: khrist14n/test_action_hola@release_v3
+        with:
+            who-to-greet: 'World'
