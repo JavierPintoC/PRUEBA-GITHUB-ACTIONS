@@ -5,9 +5,12 @@ on:
     - release/*
 jobs:
   my_job:
-    name: hola dese git
     runs-on: ubuntu-22.04
     steps:
       - name: Test Action Hola
         run: echo "hola desde github actions"
-        
+  info_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ver versiones instaladas
+        run: node -v
