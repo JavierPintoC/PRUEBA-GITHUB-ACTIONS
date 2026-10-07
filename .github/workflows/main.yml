@@ -3,16 +3,29 @@ on:
     branches:
     - main
     - release/*
+name: Deploy Pipeline
+on:
+  push:
+    branches:
+      - main
 jobs:
-  my_job:
-    runs-on: ubuntu-22.04
+  deploy-job:
+    runs-on: self-hosted 
     steps:
-      - name: Test Action Hola
-        run: echo "hola desde github actions"
-  info_ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - name: ver versiones node instalada
-        run: node -v
-      - name:  ver version de git instalado
-        run: git -v 
+      - name: Obtener código
+        uses: actions/checkout@v3
+        
+      - name: Test
+        run: |
+          echo "test"
+          
+      - name: Build
+        run: |
+          echo "build"
+          docker compose build
+          
+      - name: Deploy
+        run: |
+          echo "deploy"
+          docker-compose down || true
+          docker-compose up --build -d
