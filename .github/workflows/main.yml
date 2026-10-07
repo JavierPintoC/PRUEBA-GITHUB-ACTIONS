@@ -3,11 +3,7 @@ on:
     branches:
     - main
     - release/*
-name: Deploy Pipeline
-on:
-  push:
-    branches:
-      - main
+
 jobs:
   deploy-job:
     runs-on: self-hosted 
