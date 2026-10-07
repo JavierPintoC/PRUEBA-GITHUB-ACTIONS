@@ -23,5 +23,5 @@ jobs:
       - name: Deploy
         run: |
           echo "deploy"
-          docker-compose down || true
-          docker-compose up --build -d
+          docker compose down || true
+          docker compose up --build -d
