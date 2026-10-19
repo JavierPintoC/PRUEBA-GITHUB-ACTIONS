@@ -8,8 +8,8 @@ jobs:
     name: tests
     runs-on: self-hosted
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: copiar codigo
+        uses: actions/checkout@v4
       - name: fase de test
         run: |
         # mvn test
@@ -20,8 +20,8 @@ jobs:
     name: build
     runs-on: self-hosted
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: copiar codigo
+        uses: actions/checkout@v4
       - name: fase de build
         run: |
           docker compose build --no-cache
@@ -30,8 +30,8 @@ jobs:
     name: deploy
     runs-on: self-hosted
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: copiar codigo
+        uses: actions/checkout@v4
       - name: fase de deploy
         run: |
           docker compose up -d
