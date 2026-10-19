@@ -1,0 +1,40 @@
+on:
+  push:
+    branches:
+    - main
+    - release/
+jobs:
+  test_job:
+    name: entorno donde se va a ejecutar
+    runs-on: self-hosted
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - name: fase de test
+        run: |
+        # mvn test
+        # npm test
+        # dotnet test
+        # o algun script que haga esa funcion
+  build_job:
+    name: entorno donde se va a ejecutar
+    runs-on: self-hosted
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - name: fase de build
+        run: |
+          docker compose build --no-cache
+          # docker run -d nombre_imagen .
+  deploy_job:
+    name: entorno donde se va a ejecutar
+    runs-on: self-hosted
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - name: fase de deploy
+        run: |
+          docker compose up -d
+    
+    
+  
