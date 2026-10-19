@@ -5,7 +5,7 @@ on:
     - release/
 jobs:
   test_job:
-    name: entorno donde se va a ejecutar
+    name: tests
     runs-on: self-hosted
     steps:
       - name: Setup Node
@@ -17,7 +17,7 @@ jobs:
         # dotnet test
         # o algun script que haga esa funcion
   build_job:
-    name: entorno donde se va a ejecutar
+    name: build
     runs-on: self-hosted
     steps:
       - name: Setup Node
@@ -27,7 +27,7 @@ jobs:
           docker compose build --no-cache
           # docker run -d nombre_imagen .
   deploy_job:
-    name: entorno donde se va a ejecutar
+    name: deploy
     runs-on: self-hosted
     steps:
       - name: Setup Node
